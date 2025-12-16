@@ -27,31 +27,39 @@
         app:layout_constraintBottom_toTopOf="@id/textViewLicznik"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonPlus1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonPlus2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+2"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="79dp"
-        app:layout_constraintStart_toStartOf="@id/buttonPlus1"
-        app:layout_constraintTop_toBottomOf="@id/buttonPlus1"
         app:layout_constraintBottom_toTopOf="@id/buttonPlus3"
-        />
+        app:layout_constraintStart_toStartOf="@+id/buttonPlus1"
+        app:layout_constraintTop_toBottomOf="@id/buttonPlus1" />
 
     <Button
         android:id="@+id/buttonPlus3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+3"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="151dp"
-        app:layout_constraintStart_toStartOf="@id/buttonPlus1"
-        app:layout_constraintTop_toBottomOf="@id/buttonPlus2"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
 
-        />
+        app:layout_constraintStart_toStartOf="@+id/buttonPlus2"
+        app:layout_constraintTop_toBottomOf="@id/buttonPlus2" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toEndOf="@id/buttonPlus1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.088" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,4 +58,23 @@
 
         />
 
+    <Switch
+        android:id="@+id/switchGracze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gracz 1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="20dp"
+        />
+
+    <TextView
+        android:id="@+id/textViewWynik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gracz 1"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="6dp"
+        android:padding="20dp"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
