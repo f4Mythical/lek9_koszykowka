@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.koszykowka.databinding.ActivityMainBinding;
@@ -32,15 +33,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
         punktyViewModel = new ViewModelProvider(this)
                 .get(PunktyViewModel.class);
-        binding.textViewLicznik.setText(punktyViewModel.getPunkty()+"");
         // korzystne by zapisywac pliki przy obracaniu
-
+      punktyViewModel.getPunkty().observe(this,
+              new Observer<Integer>() {
+                  @Override
+                  public void onChanged(Integer integer) {
+                      binding.textViewLicznik.setText(""+integer);
+                  }
+              }
+      );
         binding.buttonPlus1.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         punktyViewModel.addPunkty(1);
-                        binding.textViewLicznik.setText(""+punktyViewModel.getPunkty());
                     }
                 });
                 binding.buttonPlus2.setOnClickListener(
@@ -48,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View view) {
 punktyViewModel.addPunkty(2);
-                                binding.textViewLicznik.setText(""+punktyViewModel.getPunkty());
                             }
                         });
         binding.buttonPlus3.setOnClickListener(
@@ -56,7 +61,6 @@ punktyViewModel.addPunkty(2);
                     @Override
                     public void onClick(View view) {
 punktyViewModel.addPunkty(3);
-                    binding.textViewLicznik.setText(""+punktyViewModel.getPunkty());
                     }
                 });
 
