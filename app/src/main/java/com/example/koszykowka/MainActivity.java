@@ -14,6 +14,7 @@ import com.example.koszykowka.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding; // klasa z bindowaymi widokami dla pliku activity main xml jest activitymain binding
+    private int licznik =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +29,32 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        binding.textViewLicznik.setText(0);
+        binding.textViewLicznik.setText("0");
+        binding.buttonPlus1.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        licznik+=1;
+                        binding.textViewLicznik.setText(""+licznik);
+                    }
+                });
+                binding.buttonPlus2.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                licznik+=2;
+                                binding.textViewLicznik.setText(""+licznik);
+                            }
+                        });
+        binding.buttonPlus3.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        licznik+=3;
+                        binding.textViewLicznik.setText(""+licznik);
+                    }
+                });
+
 
     }
 }
