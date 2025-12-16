@@ -8,12 +8,54 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textViewLicznik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="0"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonPlus1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <Button
+        android:id="@+id/buttonPlus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+1"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="43dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLicznik"
+        app:layout_constraintBottom_toTopOf="@id/buttonPlus2"
+        />
+
+    <Button
+        android:id="@+id/buttonPlus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+2"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="79dp"
+        app:layout_constraintStart_toStartOf="@id/buttonPlus1"
+        app:layout_constraintTop_toBottomOf="@id/buttonPlus1"
+        app:layout_constraintBottom_toTopOf="@id/buttonPlus3"
+        />
+
+    <Button
+        android:id="@+id/buttonPlus3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+3"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="151dp"
+        app:layout_constraintStart_toStartOf="@id/buttonPlus1"
+        app:layout_constraintTop_toBottomOf="@id/buttonPlus2"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
