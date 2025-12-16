@@ -8,13 +8,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.koszykowka.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding; // klasa z bindowaymi widokami dla pliku activity main xml jest activitymain binding
-    private int licznik =0;
+    PunktyViewModel punktyViewModel ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,29 +30,33 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        binding.textViewLicznik.setText("0");
+        punktyViewModel = new ViewModelProvider(this)
+                .get(PunktyViewModel.class);
+        binding.textViewLicznik.setText(punktyViewModel.getPunkty()+"");
+        // korzystne by zapisywac pliki przy obracaniu
+
         binding.buttonPlus1.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        licznik+=1;
-                        binding.textViewLicznik.setText(""+licznik);
+                        punktyViewModel.addPunkty(1);
+                        binding.textViewLicznik.setText(""+punktyViewModel.getPunkty());
                     }
                 });
                 binding.buttonPlus2.setOnClickListener(
                         new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                licznik+=2;
-                                binding.textViewLicznik.setText(""+licznik);
+punktyViewModel.addPunkty(2);
+                                binding.textViewLicznik.setText(""+punktyViewModel.getPunkty());
                             }
                         });
         binding.buttonPlus3.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        licznik+=3;
-                        binding.textViewLicznik.setText(""+licznik);
+punktyViewModel.addPunkty(3);
+                    binding.textViewLicznik.setText(""+punktyViewModel.getPunkty());
                     }
                 });
 
